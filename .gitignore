@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node (only if you later add tooling)
+node_modules/
+npm-debug.log*
+
+# Logs / temp
+*.log
+.cache/
