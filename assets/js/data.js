@@ -422,25 +422,27 @@ const ASSOCIATE_CHAPTERS = [
 
 /* --------------------------------------------------------------------------
    THE FOUR PILLARS
+   `icon` names a drawing in the ICONS map at the top of main.js — the four
+   symbols from the chapter crest (scroll, tree, scales, handshake).
    -------------------------------------------------------------------------- */
 const PILLARS = [
   {
-    glyph: "Α",
+    icon: "scroll",
     name: "Academic Achievement",
     body: "Academic achievement represents excellence in education and intellectual growth. It encompasses a commitment to pursuing knowledge, fostering critical thinking, and attaining scholastic goals. This pillar recognizes the value of learning, the pursuit of academic challenges, and the dedication required to succeed academically. It embodies qualities such as curiosity, discipline, perseverance, and a desire for personal growth through education."
   },
   {
-    glyph: "Χ",
+    icon: "tree",
     name: "Cultural Awareness",
     body: "Cultural awareness emphasizes the importance of understanding and appreciating diverse cultures, traditions, and perspectives. It reflects an open-mindedness towards different customs, beliefs, languages, and practices. This pillar encourages individuals to develop empathy, respect, and sensitivity towards others, fostering an inclusive and harmonious society. Cultural awareness promotes cross-cultural collaboration, the celebration of diversity, and the recognition of the richness that comes from intercultural exchange."
   },
   {
-    glyph: "Ρ",
+    icon: "scales",
     name: "Righteousness",
     body: "Righteousness embodies a strong sense of justice, fairness, and the courage to uphold one's values in the face of adversity. This pillar promotes a commitment to doing what is right, treating others with kindness and respect, and making principled decisions. Righteousness encourages individuals to act responsibly, stand up against injustice, and strive for a better world where equity and compassion prevail."
   },
   {
-    glyph: "Φ",
+    icon: "handshake",
     name: "Friendship and Loyalty",
     body: "Friendship and loyalty underscore the significance of genuine connections, trust, and mutual support. It highlights the value of nurturing meaningful relationships based on trust, understanding, and shared experiences. This pillar promotes empathy, compassion, and a commitment to being there for one another through thick and thin. Friendship and loyalty foster a sense of belonging, provide emotional support, and inspire individuals to build lasting connections that enrich their lives and the lives of those around them."
   }

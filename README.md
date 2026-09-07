@@ -118,6 +118,16 @@ Edit the `EXEC_BOARD` array. Same for `COMMITTEES` (minor board) and `PAST_PRESI
 `ACTIVE_HOUSE` is just a list of line numbers. Add or remove numbers; the board page pulls
 each brother's name and line name from the roster automatically.
 
+### Change a pillar icon
+
+The four pillar icons are the symbols from the chapter crest (scroll, tree, scales,
+clasped hands), cut out and recoloured to the chapter red. They live in
+`assets/img/pillar-<name>.png` at 256x256 with transparent backgrounds.
+
+In `data.js` each pillar names its icon with `icon: "scroll"`. To swap one, replace the
+PNG at that path and keep the filename. The four pillars always render on a single row
+on desktop (`.grid--pillars` in the CSS).
+
 ### Change the nav links or social media
 
 Top of `assets/js/main.js` — the `NAV_LINKS` and `SOCIALS` constants.

@@ -32,6 +32,26 @@
   }
 
   /* ======================================================================
+     CREST ICONS
+     The four symbols lifted from the chapter crest (scroll, tree, scales,
+     handshake), recoloured to the chapter red. Files live in assets/img/.
+     Referenced by name from the PILLARS list in data.js.
+     ====================================================================== */
+  const ICON_LABELS = {
+    scroll: "Scroll",
+    tree: "Tree",
+    scales: "Scales of justice",
+    handshake: "Clasped hands"
+  };
+
+  /** <img> for one of the crest symbols. */
+  function icon(name) {
+    if (!ICON_LABELS[name]) return "";
+    return `<img class="card__icon" src="assets/img/pillar-${name}.png"
+                 alt="${ICON_LABELS[name]}" width="256" height="256" loading="lazy">`;
+  }
+
+  /* ======================================================================
      NAVIGATION + FOOTER
      Rendered from one place so a link change touches a single file.
      ====================================================================== */
@@ -568,7 +588,7 @@
     host.innerHTML = PILLARS.map(
       (p, i) => `
       <div class="card reveal" data-delay="${i % 4}">
-        <span class="card__glyph" aria-hidden="true">${p.glyph}</span>
+        <span class="card__iconwrap">${icon(p.icon)}</span>
         <h3>${esc(p.name)}</h3>
         <p>${esc(p.body)}</p>
       </div>`
