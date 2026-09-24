@@ -303,6 +303,31 @@ const PLEDGE_CLASSES = [
     ]
   },
   {
+    name: "Alpha Theta", greek: "ΑΘ", term: "Fall 2025",
+    educator: 'Josh Lanzuela "MYSTIK"', assistant: 'Nick Chang "MCLAREN"',
+    brothers: [
+      [125, "Tyler Lin", "MOMENTUM"],
+      [126, "Enrico Ong", "CONQUEST"],
+      [127, "Daniel Do", "DOPAMINE"],
+      [128, "Thomson Tran", "MOONSHINE"],
+      [129, "Zachary Austria", "LE FLEUR"],
+      [130, "Ishaan Parmar", "ISO"],
+      [131, "Matthew Vuong", "MALIBU"],
+      [132, "Andrew Park", "DOPPLER"]
+    ]
+  },
+  {
+    name: "Alpha Iota", greek: "ΑΙ", term: "Spring 2026",
+    educator: 'Jon Kwon "ye"', assistant: 'George Ji "Kaizen" and Justin Nguyen "PAIN"',
+    brothers: [
+      [133, "Mathew Zheng", "MOXIE"],
+      [134, "Gavin Prom", "YEAGER"],
+      [135, "Edison Zhuo", "MEDUSA"],
+      [136, "Aiden Lau", "4-PAC"],
+      [137, "Soren Lu", "MORI"]
+    ]
+  },
+  {
     name: "Annexed", greek: "ΞΑΑ", term: "Fall 2011",
     educator: "", assistant: "", note: "Xi Alpha Alpha",
     brothers: [
@@ -370,7 +395,9 @@ const PAST_PRESIDENTS = [
   { name: "Lorenzo Legaspi", line: "Midoriya",  term: "Spring 2022 – Fall 2022", class: "Chi Class" },
   { name: "Samuel Han",      line: "SOJU BOY",  term: "Spring 2023 – Fall 2023", class: "Alpha Alpha Class" },
   { name: "Josh Lanzuela",   line: "MYSTIK",    term: "Spring 2024 – Fall 2024", class: "Alpha Beta Class" },
-  { name: "Man Tran",        line: "MOLLY",     term: "Spring 2025 – present",   class: "Alpha Gamma Class" }
+  { name: "Man Tran",        line: "MOLLY",     term: "Spring 2025 – Fall 2025", class: "Alpha Gamma Class" },
+  { name: "Jon Kwon",        line: "ye",        term: "Spring 2026 – Fall 2026", class: "Alpha Zeta Class" },
+  { name: "Enrico Ong",      line: "CONQUEST",  term: "Fall 2026 – present",     class: "Alpha Theta Class" }
 ];
 
 /* --------------------------------------------------------------------------
