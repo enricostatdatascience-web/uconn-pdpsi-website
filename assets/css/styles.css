@@ -608,25 +608,19 @@ section { position: relative; }
 
 /* ---------- Roster ---------- */
 .classblock {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 16px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.018);
+  margin-bottom: 4px;
 }
 .classblock__head {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 5;
   display: flex;
   align-items: center;
   gap: 16px;
-  width: 100%;
-  padding: 20px 24px;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.2s;
+  padding: 16px 4px 14px;
+  background: var(--black-900);
+  border-bottom: 1px solid var(--border-strong);
 }
-.classblock__head:hover { background: var(--surface); }
 .classblock__greek {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -636,8 +630,20 @@ section { position: relative; }
   text-align: center;
 }
 .classblock__meta { flex: 1; min-width: 0; }
-.classblock__name { font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; }
-.classblock__term { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); font-weight: 600; }
+.classblock__name {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+.classblock__term {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+}
 .classblock__count {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
@@ -650,27 +656,18 @@ section { position: relative; }
   font-weight: 600;
   white-space: nowrap;
 }
-.classblock__caret {
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  transition: transform 0.3s var(--ease);
-  flex-shrink: 0;
-}
-.classblock.is-open .classblock__caret { transform: rotate(180deg); }
-.classblock__body { display: none; padding: 4px 24px 24px; }
-.classblock.is-open .classblock__body { display: block; }
+.classblock__body { padding: 18px 4px 40px; }
 
 .educators {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 22px;
-  padding: 0 0 18px;
+  padding: 0 0 16px;
   margin-bottom: 18px;
-  border-bottom: 1px solid var(--border);
   font-size: 0.83rem;
   color: var(--text-dim);
 }
-.educators span b { color: var(--text-muted); font-weight: 600; }
+.educators span b { color: var(--text); font-weight: 700; letter-spacing: 0.01em; }
 
 .brothers { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr)); gap: 10px; }
 .brother {
@@ -947,5 +944,5 @@ section { position: relative; }
 @media print {
   .nav, .totop, .hero__scroll, .controls, .chiprow { display: none !important; }
   body { background: #fff; color: #000; }
-  .classblock__body { display: block !important; }
+  .classblock__head { position: static; }
 }

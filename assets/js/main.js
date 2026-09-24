@@ -287,11 +287,9 @@
     const clearBtn = $("#roster-clear");
     const chipRow = $("#roster-chips");
     const countEl = $("#roster-count");
-    const expandBtn = $("#roster-expand");
 
     let query = "";
     let era = "all"; // all | 2008-2013 | 2014-2019 | 2020-now
-    let allOpen = false;
 
     const ERAS = [
       ["all", "All Classes"],
@@ -324,24 +322,22 @@
         if (!hits.length) return "";
         shown += hits.length;
 
-        const open = allOpen || (q.length > 0);
         const eds = [];
         if (cls.educator) eds.push(`<span><b>Pledge Educator</b> — ${esc(cls.educator)}</span>`);
         if (cls.assistant) eds.push(`<span><b>Pledge Assistant</b> — ${esc(cls.assistant)}</span>`);
 
         return `
-          <div class="classblock${open ? " is-open" : ""}" data-class="${esc(cls.name)}">
-            <button class="classblock__head" type="button" aria-expanded="${open}">
+          <section class="classblock" data-class="${esc(cls.name)}">
+            <header class="classblock__head">
               <span class="classblock__greek" aria-hidden="true">${cls.greek}</span>
               <span class="classblock__meta">
-                <span class="classblock__name">${esc(cls.name)} Class${
+                <h3 class="classblock__name">${esc(cls.name)} Class${
                   cls.note ? ` <span style="font-weight:400;color:var(--text-dim);font-size:.85rem">(${esc(cls.note)})</span>` : ""
-                }</span>
+                }</h3>
                 <span class="classblock__term">${esc(cls.term)}</span>
               </span>
               <span class="classblock__count">${hits.length} ${hits.length === 1 ? "brother" : "brothers"}</span>
-              <span class="classblock__caret" aria-hidden="true">▼</span>
-            </button>
+            </header>
             <div class="classblock__body">
               ${eds.length ? `<div class="educators">${eds.join("")}</div>` : ""}
               <div class="brothers">
@@ -358,7 +354,7 @@
                   .join("")}
               </div>
             </div>
-          </div>`;
+          </section>`;
       }).join("");
 
       host.innerHTML =
@@ -371,13 +367,6 @@
           : `<b>${TOTAL_BROTHERS}</b> brothers initiated since 2008`;
       }
 
-      $$(".classblock__head", host).forEach((head) => {
-        head.addEventListener("click", () => {
-          const block = head.closest(".classblock");
-          const isOpen = block.classList.toggle("is-open");
-          head.setAttribute("aria-expanded", String(isOpen));
-        });
-      });
     }
 
     // Filter chips
@@ -411,14 +400,6 @@
         render();
       });
     }
-    if (expandBtn) {
-      expandBtn.addEventListener("click", () => {
-        allOpen = !allOpen;
-        expandBtn.textContent = allOpen ? "Collapse all" : "Expand all";
-        render();
-      });
-    }
-
     render();
   }
 
