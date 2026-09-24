@@ -411,9 +411,9 @@ section { position: relative; }
 }
 
 /* Per-page photos */
-.pagehead--rush   { --head-img: url("../img/rush-hero.jpg");   --head-focus: center 30%; }
+.pagehead--rush   { --head-img: url("../img/rush-hero.webp");   --head-focus: center 30%; }
 .pagehead--roster {
-  --head-img: url("../img/roster-hero.jpg");
+  --head-img: url("../img/roster-hero.webp");
   --head-focus: center bottom;
   --head-bright: 1.12;
   --scrim-l: 0.93; --scrim-m: 0.68; --scrim-r: 0.2;

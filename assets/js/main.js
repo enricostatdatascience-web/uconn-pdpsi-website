@@ -85,7 +85,7 @@
     host.innerHTML = `
       <div class="nav__inner">
         <a class="brand" href="index.html" aria-label="Pi Delta Psi, Omega Chapter — home">
-          <img class="brand__crest" src="assets/img/crest.png" alt="" width="606" height="720">
+          <img class="brand__crest" src="assets/img/crest-sm.webp" alt="" width="160" height="190" decoding="async">
           <span class="brand__text">
             <span class="brand__name">Pi Delta Psi</span>
             <span class="brand__sub">Omega &middot; UConn</span>
@@ -133,7 +133,7 @@
         <div class="footer__top">
           <div class="footer__brand">
             <a class="brand" href="index.html">
-              <img class="brand__crest" src="assets/img/crest.png" alt="" width="606" height="720">
+              <img class="brand__crest" src="assets/img/crest-sm.webp" alt="" width="160" height="190" decoding="async">
                   <span class="brand__text">
                 <span class="brand__name">Pi Delta Psi</span>
                 <span class="brand__sub">Omega &middot; UConn</span>
