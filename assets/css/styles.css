@@ -385,7 +385,10 @@ section { position: relative; }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(10,10,10,0.86) 0%, rgba(10,10,10,0.55) 46%, rgba(10,10,10,0.14) 100%),
+    linear-gradient(90deg,
+      rgba(10,10,10,var(--scrim-l, 0.86)) 0%,
+      rgba(10,10,10,var(--scrim-m, 0.55)) 46%,
+      rgba(10,10,10,var(--scrim-r, 0.14)) 100%),
     linear-gradient(180deg, rgba(10,10,10,0.55) 0%, transparent 30%, transparent 62%, rgba(10,10,10,0.82) 100%);
 }
 .pagehead--photo .wrap { position: relative; z-index: 2; }
@@ -409,7 +412,12 @@ section { position: relative; }
 
 /* Per-page photos */
 .pagehead--rush   { --head-img: url("../img/rush-hero.jpg");   --head-focus: center 30%; }
-.pagehead--roster { --head-img: url("../img/roster-hero.jpg"); --head-focus: center 46%; --head-bright: 1.12; }
+.pagehead--roster {
+  --head-img: url("../img/roster-hero.jpg");
+  --head-focus: center bottom;
+  --head-bright: 1.12;
+  --scrim-l: 0.93; --scrim-m: 0.68; --scrim-r: 0.2;
+}
 
 .pagehead__glyph { display: none; }
 .pagehead--photo h1 {
