@@ -360,6 +360,8 @@ section { position: relative; }
 }
 /* Photo variant of the page header (rush). The overlay keeps the heading
    readable over the image and fades the photo into the page background. */
+/* Photo page header. Each page sets --head-img (and optionally --head-focus
+   and --head-bright) on its own modifier class below. */
 .pagehead--photo {
   min-height: 78vh;
   display: flex;
@@ -371,10 +373,10 @@ section { position: relative; }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../img/rush-hero.jpg");
+  background-image: var(--head-img);
   background-size: cover;
-  background-position: center 30%;
-  filter: brightness(1.22) saturate(1.06);
+  background-position: var(--head-focus, center 30%);
+  filter: brightness(var(--head-bright, 1.22)) saturate(1.06);
   z-index: 0;
 }
 .pagehead--photo::after {
@@ -388,6 +390,28 @@ section { position: relative; }
 }
 .pagehead--photo .wrap { position: relative; z-index: 2; }
 .pagehead--photo .pagehead__glyph { display: none; }
+.pagehead--photo h1 {
+  font-size: clamp(2.9rem, 8vw, 5.4rem);
+  text-shadow: 0 3px 30px rgba(0,0,0,0.75);
+}
+.pagehead--photo p {
+  color: #f0f0f0;
+  font-size: 1.12rem;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.85);
+}
+@media (max-width: 760px) {
+  .pagehead--photo { min-height: 64vh; }
+  .pagehead--photo::after {
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.42) 40%, rgba(10,10,10,0.88) 100%);
+  }
+}
+
+/* Per-page photos */
+.pagehead--rush   { --head-img: url("../img/rush-hero.jpg");   --head-focus: center 30%; }
+.pagehead--roster { --head-img: url("../img/roster-hero.jpg"); --head-focus: center 46%; --head-bright: 1.12; }
+
+.pagehead__glyph { display: none; }
 .pagehead--photo h1 {
   font-size: clamp(2.9rem, 8vw, 5.4rem);
   text-shadow: 0 3px 30px rgba(0,0,0,0.75);
