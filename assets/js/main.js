@@ -173,6 +173,8 @@
 
   /* ======================================================================
      SCROLL REVEAL
+     Not applied on the roster page. A percentage threshold silently fails on
+     elements taller than the viewport, so this fires on any intersection.
      ====================================================================== */
   function initReveal() {
     const items = $$(".reveal");
@@ -191,7 +193,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0, rootMargin: "0px 0px -60px 0px" }
     );
     items.forEach((el) => io.observe(el));
   }
@@ -590,7 +592,6 @@
     initFounders();
     initAccordion();
     initToTop();
-    // Reveal + counters run last so dynamically inserted nodes are included.
     initReveal();
     initCounters();
   }
