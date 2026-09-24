@@ -340,39 +340,45 @@ const PLEDGE_CLASSES = [
    EXECUTIVE BOARD
    -------------------------------------------------------------------------- */
 const EXEC_BOARD = [
-  { role: "President",              name: "Man Tran",     line: "MOLLY" },
-  { role: "External Vice President", name: "George Ji",    line: "Kaizen" },
-  { role: "Internal Vice President", name: "Rodge Rebeca", line: "DMX" },
-  { role: "Secretary",              name: "Justin Nguyen", line: "PAIN" },
-  { role: "Treasurer",              name: "Riley Li",     line: "Singularity" },
-  { role: "Warden",                 name: "Jon Kwon",     line: "ye" }
+  { role: "President",               name: "Enrico Ong",        line: "CONQUEST" },
+  { role: "Internal Vice President", name: "Sean Stajuana",     line: "MOJAVE" },
+  { role: "External Vice President", name: "Shaswot Pokharel",  line: "Aladdin" },
+  { role: "Secretary",               name: "Riley Li",          line: "Singularity" },
+  { role: "Treasurer",               name: "Thomson Tran",      line: "MOONSHINE" },
+  { role: "Warden",                  name: "Geoffrey Tabora",   line: "MICHELIN" }
 ];
 
 /* --------------------------------------------------------------------------
-   MINOR BOARD / COMMITTEES
+   CHAIRS (minor board)
    -------------------------------------------------------------------------- */
 const COMMITTEES = [
-  { name: "Rush",              members: [["Andrew Nam", "MASERATI"], ["Man Tran", "MOLLY"], ["Jonathan Kwon", "ye"]] },
-  { name: "Fundraising",       members: [["Riley Li", "Singularity"], ["Shaswot Pokharel", "Aladdin"], ["Timmy Tran", "MIA"]] },
-  { name: "Cultural",          members: [["Shaswot Pokharel", "Aladdin"], ["Timmy Tran", "MIA"]] },
-  { name: "Performance",       members: [["Man Tran", "MOLLY"], ["Josh Lanzuela", "MYSTIK"]] },
-  { name: "Historian",         members: [["Shaswot Pokharel", "Aladdin"], ["Tom Lin", "MMA"]] },
-  { name: "Alumni",            members: [["Andrew Nam", "MASERATI"], ["Eric Chen", "MUNCHIES"]] },
-  { name: "Risk Management",   members: [["Man Tran", "MOLLY"], ["Jaden Chen", "MSG"]] },
-  { name: "Community Service", members: [["Eric Chen", "MUNCHIES"], ["George Ji", "Kaizen"]] },
-  { name: "Philanthropy",      members: [["Man Tran", "MOLLY"], ["Kyle Nguyen", "DABI"], ["Sean Stajuana", "MOJAVE"]] },
-  { name: "Brother Unity",     members: [["Man Tran", "MOLLY"], ["Nick Chang", "MCLAREN"], ["Jonathan Kwon", "ye"]] },
-  { name: "Public Relations",  members: [["Josh Lanzuela", "MYSTIK"], ["Kyle Nguyen", "DABI"], ["George Ji", "Kaizen"]] },
-  { name: "Academic",          members: [["Justin Nguyen", "PAIN"], ["Jonathan Jung", "MADDEN"]] },
-  { name: "Council Rep",       members: [["Jonathan Jung", "MADDEN"], ["Tom Lin", "MMA"]] },
-  { name: "Social",            members: [["Geoffrey Tabora", "MICHELIN"], ["Sean Stajuana", "MOJAVE"]] },
-  { name: "Webmaster",         members: [["Kyle Nguyen", "DABI"]] }
+  { name: "Recruitment",       members: [["Enrico Ong", "CONQUEST"], ["Zachary Austria", "LE FLEUR"], ["Mathew Zheng", "MOXIE"]] },
+  { name: "Academic",          members: [["Aiden Lau", "4-PAC"], ["Ishaan Parmar", "ISO"]] },
+  { name: "Cultural",          members: [["Mathew Zheng", "MOXIE"], ["Edison Zhuo", "MEDUSA"]] },
+  { name: "Philanthropy",      members: [["Enrico Ong", "CONQUEST"], ["Gavin Prom", "YEAGER"]] },
+  { name: "Community Service", members: [["Zachary Austria", "LE FLEUR"], ["Aiden Lau", "4-PAC"]] },
+  { name: "Social",            members: [["Gavin Prom", "YEAGER"], ["Sean Stajuana", "MOJAVE"]] },
+  { name: "Fundraising",       members: [["Thomson Tran", "MOONSHINE"], ["Riley Li", "Singularity"]] },
+  { name: "Public Relations",  members: [["Daniel Do", "DOPAMINE"], ["Soren Lu", "MORI"]] },
+  { name: "Banquet",           members: [["Enrico Ong", "CONQUEST"], ["Thomson Tran", "MOONSHINE"]] },
+  { name: "Risk Management",   members: [["Jonathan Kwon", "ye"]] },
+  { name: "Webmaster",         members: [["Ishaan Parmar", "ISO"]] },
+  { name: "PAC Rep",           members: [["Edison Zhuo", "MEDUSA"]] },
+  { name: "IGC Rep",           members: [["Mathew Zheng", "MOXIE"]] },
+  { name: "Historian",         members: [["Daniel Do", "DOPAMINE"], ["Soren Lu", "MORI"]] },
+  { name: "Brother Unity",     members: [["Jonathan Kwon", "ye"], ["Shaswot Pokharel", "Aladdin"]] }
 ];
 
 /* --------------------------------------------------------------------------
    ACTIVE HOUSE — line numbers of brothers currently active on campus
    -------------------------------------------------------------------------- */
-const ACTIVE_HOUSE = [99, 102, 103, 104, 105, 106, 107, 109, 113, 114, 116, 117, 118, 119, 120, 121, 122, 123, 124];
+/* Alpha Zeta through Alpha Iota, less #122 Timmy Tran and #123 Jonathan Jung. */
+const ACTIVE_HOUSE = [
+  117, 118, 119, 120,                          // Alpha Zeta
+  121, 124,                                    // Alpha Eta
+  125, 126, 127, 128, 129, 130, 131, 132,      // Alpha Theta
+  133, 134, 135, 136, 137                      // Alpha Iota
+];
 
 /* --------------------------------------------------------------------------
    PAST PRESIDENTS
