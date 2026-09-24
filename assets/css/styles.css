@@ -361,7 +361,10 @@ section { position: relative; }
 /* Photo variant of the page header (rush). The overlay keeps the heading
    readable over the image and fades the photo into the page background. */
 .pagehead--photo {
-  padding: calc(var(--nav-h) + 112px) 0 104px;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 72px) 0 76px;
   background: var(--black-900);
 }
 .pagehead--photo::before {
@@ -370,7 +373,8 @@ section { position: relative; }
   inset: 0;
   background-image: url("../img/rush-hero.jpg");
   background-size: cover;
-  background-position: center 32%;
+  background-position: center 30%;
+  filter: brightness(1.22) saturate(1.06);
   z-index: 0;
 }
 .pagehead--photo::after {
@@ -379,11 +383,29 @@ section { position: relative; }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.82) 42%, rgba(10,10,10,0.5) 100%),
-    linear-gradient(180deg, rgba(10,10,10,0.75) 0%, transparent 34%, rgba(10,10,10,0.9) 100%);
+    linear-gradient(90deg, rgba(10,10,10,0.86) 0%, rgba(10,10,10,0.55) 46%, rgba(10,10,10,0.14) 100%),
+    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, transparent 30%, transparent 62%, rgba(10,10,10,0.82) 100%);
 }
 .pagehead--photo .wrap { position: relative; z-index: 2; }
 .pagehead--photo .pagehead__glyph { display: none; }
+.pagehead--photo h1 {
+  font-size: clamp(2.9rem, 8vw, 5.4rem);
+  text-shadow: 0 3px 30px rgba(0,0,0,0.75);
+}
+.pagehead--photo p {
+  color: #f0f0f0;
+  font-size: 1.12rem;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.85);
+}
+@media (max-width: 760px) {
+  .pagehead--photo { min-height: 64vh; }
+  .pagehead--photo::after {
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.42) 40%, rgba(10,10,10,0.88) 100%);
+  }
+}
+
+.pagehead__glyph { display: none; }
 .pagehead--photo h1 { text-shadow: 0 2px 24px rgba(0,0,0,0.6); }
 .pagehead--photo p { color: #e6e6e6; text-shadow: 0 1px 14px rgba(0,0,0,0.7); }
 @media (max-width: 760px) {
