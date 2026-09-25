@@ -935,40 +935,39 @@ section { position: relative; }
 .acc-item__inner { overflow: hidden; }
 .acc-item__inner > div { padding-bottom: 26px; color: var(--text-muted); max-width: 74ch; }
 
-/* ---------- Photo band ----------
-   Full-bleed image strip used to break up a long page. */
-.photoband {
+/* ---------- Photo-backed section ----------
+   A normal section with a photo behind it. Declare the image on a modifier
+   class here, never inline: a url() in a custom property resolves against
+   the stylesheet that uses it, not the page. */
+.section--photo {
   position: relative;
-  min-height: 46vh;
-  display: flex;
-  align-items: flex-end;
-  background-image: var(--band-img);
-  background-size: cover;
-  background-position: var(--band-focus, center);
   overflow: hidden;
+  padding: clamp(96px, 13vw, 168px) 0;
 }
-.photoband::after {
+.section--photo::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.1) 42%, rgba(10,10,10,0.9) 100%);
+  background-image: var(--band-img);
+  background-size: cover;
+  background-position: var(--band-focus, center);
+  filter: brightness(var(--band-bright, 1.12)) saturate(1.05);
 }
-.photoband__caption {
-  position: relative;
-  z-index: 1;
-  width: min(100% - 44px, var(--wrap));
-  margin: 0 auto 34px;
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 3vw, 2.1rem);
-  font-style: italic;
-  color: #fff;
-  text-shadow: 0 2px 22px rgba(0,0,0,0.85);
+.section--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10,10,10,0.94) 0%,
+    rgba(10,10,10,0.72) 38%,
+    rgba(10,10,10,0.72) 62%,
+    rgba(10,10,10,0.96) 100%);
 }
-@media (max-width: 760px) { .photoband { min-height: 38vh; } }
+.section--photo > * { position: relative; z-index: 2; }
+.section--photo h2 { text-shadow: 0 3px 28px rgba(0,0,0,0.8); }
+.section--photo .section-lede { color: #ececec; text-shadow: 0 2px 16px rgba(0,0,0,0.85); }
 
-/* Declare band images here, not inline: a url() inside a custom property
-   resolves against the stylesheet that uses it, not the page. */
-.photoband--banquet { --band-img: url("../img/band-banquet.webp"); --band-focus: center 42%; }
+.section--banquet { --band-img: url("../img/band-banquet.webp"); --band-focus: center 42%; }
 
 /* ---------- Photo gallery ---------- */
 .gallery {
