@@ -126,7 +126,6 @@
     const host = $("#site-footer");
     if (!host) return;
     const year = new Date().getFullYear();
-    // The build credit shows on the home page only.
 
     host.className = "footer";
     host.innerHTML = `
@@ -161,9 +160,7 @@
         <div class="footer__bottom">
           <div class="footer__legal">
             <span>&copy; ${year} Pi Delta Psi Fraternity, Inc. &mdash; Omega Chapter. All rights reserved.</span>
-            ${currentPage() === "index.html"
-              ? `<span class="footer__credit">Site designed and built by #126 Enrico Ong &ldquo;CONQUEST&rdquo;</span>`
-              : ""}
+            <span class="footer__credit">Site designed and built by #126 Enrico Ong &ldquo;CONQUEST&rdquo;</span>
           </div>
           <div class="footer__social">
             <a href="${SOCIALS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">
