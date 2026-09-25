@@ -407,6 +407,8 @@ section { position: relative; }
 .pagehead--rush   { --head-img: url("../img/rush-hero.webp");   --head-focus: center 30%; }
 .pagehead--about  { --head-img: url("../img/about-hero.webp");  --head-focus: center 38%; --head-bright: 1.15;
                     --scrim-l: 0.9; --scrim-m: 0.62; --scrim-r: 0.18; }
+.pagehead--chapters{ --head-img: url("../img/chapters-hero.webp"); --head-focus: center 38%; --head-bright: 1.14;
+                    --scrim-l: 0.9; --scrim-m: 0.62; --scrim-r: 0.2; }
 .pagehead--history{ --head-img: url("../img/history-hero.webp"); --head-focus: center; --head-bright: 1.1;
                     --scrim-l: 0.9; --scrim-m: 0.6; --scrim-r: 0.16;
                     /* match the photo so the full frame is visible */
