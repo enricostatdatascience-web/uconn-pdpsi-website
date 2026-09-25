@@ -272,17 +272,6 @@ section { position: relative; }
     radial-gradient(ellipse 60% 50% at 82% 78%, rgba(143, 11, 32, 0.28), transparent 60%),
     linear-gradient(165deg, #161616 0%, #0a0a0a 55%, #0d0d0d 100%);
 }
-.hero__grid {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
-  background-size: 74px 74px;
-  mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, #000 35%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, #000 35%, transparent 78%);
-}
 .hero__crest {
   position: absolute;
   right: -2%;
@@ -961,7 +950,9 @@ section { position: relative; }
   background-image: var(--band-img);
   background-size: cover;
   background-position: var(--band-focus, center);
-  filter: brightness(var(--band-bright, 1.12)) saturate(1.05);
+  /* scale slightly when blurring so the blur does not bleed transparent edges */
+  transform: scale(var(--band-scale, 1));
+  filter: brightness(var(--band-bright, 1.12)) saturate(1.05) blur(var(--band-blur, 0px));
 }
 .section--photo::after {
   content: "";
@@ -978,6 +969,13 @@ section { position: relative; }
 .section--photo .section-lede { color: #ececec; text-shadow: 0 2px 16px rgba(0,0,0,0.85); }
 
 .section--banquet { --band-img: url("../img/band-banquet.webp"); --band-focus: center 42%; }
+/* Standalone brand graphic block */
+.brandmark {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
 
 /* ---------- Photo gallery ---------- */
 .gallery {
