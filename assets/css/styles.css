@@ -730,11 +730,11 @@ section { position: relative; }
   line-height: 1.25;
 }
 .classblock__term {
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-dim);
-  font-weight: 600;
+  color: var(--red-300);
+  font-weight: 700;
 }
 .classblock__count {
   font-size: 0.72rem;
@@ -753,20 +753,21 @@ section { position: relative; }
 .educators {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 22px;
+  gap: 8px 26px;
   padding: 0 0 16px;
   margin-bottom: 18px;
-  font-size: 0.83rem;
-  color: var(--text-dim);
+  font-size: 0.9rem;
+  color: #fff;
 }
-.educators span b { color: var(--text); font-weight: 700; letter-spacing: 0.01em; }
+.educators em { font-style: italic; font-weight: 600; color: var(--text-muted); margin-left: 4px; }
+.educators span b { color: var(--red-400); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.74rem; margin-right: 8px; }
 
-.brothers { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr)); gap: 10px; }
+.brothers { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(305px, 100%), 1fr)); gap: 10px; }
 .brother {
   display: flex;
   align-items: baseline;
   gap: 11px;
-  padding: 11px 14px;
+  padding: 12px 15px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: rgba(255,255,255,0.02);
@@ -781,8 +782,24 @@ section { position: relative; }
   min-width: 30px;
   font-weight: 700;
 }
-.brother__name { font-weight: 600; font-size: 0.93rem; line-height: 1.35; }
-.brother__line { display: block; font-size: 0.78rem; color: var(--text-dim); font-style: italic; font-weight: 400; }
+.brother__name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #fff;
+}
+.brother__line {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 2px;
+  white-space: nowrap;
+}
+/* the longest names need a touch less type to stay on one line mid-range */
+@media (max-width: 1100px) {
+  .brother__name { font-size: 0.89rem; }
+  .brother { padding: 11px 13px; }
+}
 .brother mark { background: rgba(200, 16, 46, 0.5); color: #fff; border-radius: 3px; padding: 0 2px; }
 
 /* ---------- Timeline ---------- */

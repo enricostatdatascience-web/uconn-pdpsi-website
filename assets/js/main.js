@@ -31,6 +31,11 @@
     );
   }
 
+  /** Escape a pledge-educator string and italicise any "line name" inside it. */
+  function edHtml(str) {
+    return esc(str).replace(/&quot;(.*?)&quot;/g, '<em>&ldquo;$1&rdquo;</em>');
+  }
+
   /* ======================================================================
      CREST ICONS
      The four symbols lifted from the chapter crest (scroll, tree, scales,
@@ -328,8 +333,8 @@
         shown += hits.length;
 
         const eds = [];
-        if (cls.educator) eds.push(`<span><b>Pledge Educator</b> — ${esc(cls.educator)}</span>`);
-        if (cls.assistant) eds.push(`<span><b>Pledge Assistant</b> — ${esc(cls.assistant)}</span>`);
+        if (cls.educator) eds.push(`<span><b>Pledge Educator</b> ${edHtml(cls.educator)}</span>`);
+        if (cls.assistant) eds.push(`<span><b>Pledge Assistant</b> ${edHtml(cls.assistant)}</span>`);
 
         return `
           <section class="classblock" data-class="${esc(cls.name)}">
@@ -351,9 +356,7 @@
                     (b) => `
                   <div class="brother">
                     <span class="brother__num">#${b[0]}</span>
-                    <span class="brother__name">${highlight(b[1], q)}
-                      <span class="brother__line">&ldquo;${highlight(b[2], q)}&rdquo;</span>
-                    </span>
+                    <span class="brother__name">${highlight(b[1], q)} <em class="brother__line">&ldquo;${highlight(b[2], q)}&rdquo;</em></span>
                   </div>`
                   )
                   .join("")}
@@ -524,9 +527,7 @@
           (b) => `
         <div class="brother">
           <span class="brother__num">#${b.num}</span>
-          <span class="brother__name">${esc(b.name)}
-            <span class="brother__line">&ldquo;${esc(b.line)}&rdquo;</span>
-          </span>
+          <span class="brother__name">${esc(b.name)} <em class="brother__line">&ldquo;${esc(b.line)}&rdquo;</em></span>
         </div>`
         )
         .join("");
