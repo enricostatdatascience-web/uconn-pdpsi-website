@@ -412,6 +412,8 @@ section { position: relative; }
 
 /* Per-page photos */
 .pagehead--rush   { --head-img: url("../img/rush-hero.webp");   --head-focus: center 30%; }
+.pagehead--about  { --head-img: url("../img/about-hero.webp");  --head-focus: center 38%; --head-bright: 1.15;
+                    --scrim-l: 0.9; --scrim-m: 0.62; --scrim-r: 0.18; }
 .pagehead--roster {
   --head-img: url("../img/roster-hero.webp");
   --head-focus: center bottom;
@@ -932,6 +934,73 @@ section { position: relative; }
 .acc-item.is-open .acc-item__body { grid-template-rows: 1fr; }
 .acc-item__inner { overflow: hidden; }
 .acc-item__inner > div { padding-bottom: 26px; color: var(--text-muted); max-width: 74ch; }
+
+/* ---------- Photo band ----------
+   Full-bleed image strip used to break up a long page. */
+.photoband {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  background-image: var(--band-img);
+  background-size: cover;
+  background-position: var(--band-focus, center);
+  overflow: hidden;
+}
+.photoband::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.1) 42%, rgba(10,10,10,0.9) 100%);
+}
+.photoband__caption {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 44px, var(--wrap));
+  margin: 0 auto 34px;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2.1rem);
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 2px 22px rgba(0,0,0,0.85);
+}
+@media (max-width: 760px) { .photoband { min-height: 38vh; } }
+
+/* Declare band images here, not inline: a url() inside a custom property
+   resolves against the stylesheet that uses it, not the page. */
+.photoband--banquet { --band-img: url("../img/band-banquet.webp"); --band-focus: center 42%; }
+
+/* ---------- Photo gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 18px;
+}
+.gallery figure {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.gallery figure:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.gallery img {
+  width: 100%;
+  height: auto;            /* beats the width/height attributes so aspect-ratio applies */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+}
+.gallery figcaption {
+  padding: 13px 16px 15px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted);
+}
 
 /* ---------- Footer ---------- */
 .footer {
