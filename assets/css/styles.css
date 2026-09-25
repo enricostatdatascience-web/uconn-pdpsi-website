@@ -1072,6 +1072,9 @@ section { position: relative; }
   font-size: 0.78rem;
   color: var(--text-dim);
 }
+.footer__legal { display: grid; gap: 5px; }
+.footer__credit { color: var(--text-dim); font-size: 0.76rem; }
+.footer__credit b { color: var(--red-400); font-weight: 600; }
 .footer__social { display: flex; gap: 10px; }
 .footer__social a {
   width: 38px; height: 38px;
