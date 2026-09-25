@@ -363,7 +363,9 @@ section { position: relative; }
 /* Photo page header. Each page sets --head-img (and optionally --head-focus
    and --head-bright) on its own modifier class below. */
 .pagehead--photo {
-  min-height: 78vh;
+  /* A page can pin the box to its photo's aspect ratio so nothing is cropped. */
+  aspect-ratio: var(--head-ratio, auto);
+  min-height: var(--head-minh, 78vh);
   display: flex;
   align-items: center;
   padding: calc(var(--nav-h) + 72px) 0 76px;
@@ -404,6 +406,8 @@ section { position: relative; }
 }
 @media (max-width: 760px) {
   .pagehead--photo { min-height: 64vh; }
+  /* too narrow to honour a wide photo ratio; fall back to a cropped band */
+  .pagehead--history { --head-ratio: auto; --head-minh: 56vh; --head-focus: center 12%; }
   .pagehead--photo::after {
     background:
       linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.42) 40%, rgba(10,10,10,0.88) 100%);
@@ -414,8 +418,10 @@ section { position: relative; }
 .pagehead--rush   { --head-img: url("../img/rush-hero.webp");   --head-focus: center 30%; }
 .pagehead--about  { --head-img: url("../img/about-hero.webp");  --head-focus: center 38%; --head-bright: 1.15;
                     --scrim-l: 0.9; --scrim-m: 0.62; --scrim-r: 0.18; }
-.pagehead--history{ --head-img: url("../img/history-hero.webp"); --head-focus: center 12%; --head-bright: 1.1;
-                    --scrim-l: 0.92; --scrim-m: 0.66; --scrim-r: 0.2; }
+.pagehead--history{ --head-img: url("../img/history-hero.webp"); --head-focus: center; --head-bright: 1.1;
+                    --scrim-l: 0.9; --scrim-m: 0.6; --scrim-r: 0.16;
+                    /* match the photo so the full frame is visible */
+                    --head-ratio: 960 / 608; --head-minh: 0; }
 .pagehead--roster {
   --head-img: url("../img/roster-hero.webp");
   --head-focus: center bottom;
@@ -435,6 +441,8 @@ section { position: relative; }
 }
 @media (max-width: 760px) {
   .pagehead--photo { min-height: 64vh; }
+  /* too narrow to honour a wide photo ratio; fall back to a cropped band */
+  .pagehead--history { --head-ratio: auto; --head-minh: 56vh; --head-focus: center 12%; }
   .pagehead--photo::after {
     background:
       linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.42) 40%, rgba(10,10,10,0.88) 100%);
